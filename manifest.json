@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "DSA Sync Tracker",
+  "version": "2.0",
+  "description": "Sync solved LeetCode problems with Striver's sheet",
+  "permissions": ["storage", "activeTab", "scripting"],
+
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://takeuforward.org/*"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://takeuforward.org/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
